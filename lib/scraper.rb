@@ -13,6 +13,7 @@ class Scraper
           student_location = container.css(".student-location").text
           students << {name: student_name, location: student_location}
         end
+      end
       students
     end
 
