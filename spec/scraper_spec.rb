@@ -14,8 +14,8 @@ require "spec_helper"
  :profile_quote=>"\"Forget safety. Live where you fear to live. Destroy your reputation. Be notorious.\" - Rumi",
  :bio=>
   "I was in southern California for college (sun and In-n-Out!), rural Oregon for high school (lived in a town with 1500 people and 3000+ cows), and Tokyo for elementary/middle school."}}
-   describe "#scrape_index_page" do 
-    it "is a class method that scrapes the student index page and a returns an array of hashes in which each hash represents one student" do 
+   describe "#scrape_index_page" do
+    it "is a class method that scrapes the student index page and a returns an array of hashes in which each hash represents one student" do
       VCR.use_cassette('fixtures/index_page') do
         index_url = "http://learn-co-curriculum.github.io/student-scrape-site/"
         scraped_students = Scraper.scrape_index_page(index_url)
@@ -26,8 +26,8 @@ require "spec_helper"
       end
     end
   end
-   describe "#scrape_profile_page" do 
-    it "is a class method that scrapes a student's profile page and returns a hash of attributes describing an individual student" do 
+   describe "#scrape_profile_page" do
+    it "is a class method that scrapes a student's profile page and returns a hash of attributes describing an individual student" do
       VCR.use_cassette('fixtures/profile_page') do
         profile_url = "http://learn-co-curriculum.github.io/student-scrape-site/profile.html"
         scraped_student = Scraper.scrape_profile_page(profile_url)
