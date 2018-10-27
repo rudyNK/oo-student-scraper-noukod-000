@@ -12,10 +12,9 @@ class Scraper
           student_name = container.css(".student-name").text
           student_location = container.css(".student-location").text
           students << {name: student_name, location: student_location}
-        end
       end
       students
-    
+
 
 
  def self.scrape_profile_page(profile_url)
